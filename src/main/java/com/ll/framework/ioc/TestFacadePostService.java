@@ -1,11 +1,11 @@
-package com.ll.domain.testPost.service;
+package com.ll.framework.ioc;
 
 import com.ll.domain.testPost.repository.TestPostRepository;
-import com.ll.framework.annotations.Service.Service;
+import com.ll.domain.testPost.service.TestPostService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@Service
-public class TestPostService {
+public class TestFacadePostService {
+    private final TestPostService testPostService;
     private final TestPostRepository testPostRepository;
 }

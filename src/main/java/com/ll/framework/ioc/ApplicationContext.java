@@ -21,8 +21,9 @@ public class ApplicationContext {
 
         if(bean == null) {
             bean = switch(beanName) {
-                case "testPostService" -> new TestPostService();
+                case "testPostService" ->  new TestPostService(genBean("testPostRepository"));
                 case "testPostRepository" -> new TestPostRepository();
+                case "testFacadePostService" -> new TestFacadePostService(genBean("testPostService"), genBean("testPostRepository"));
                 default -> null;
             };
 
